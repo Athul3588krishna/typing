@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Competition</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Example styles to position the logos */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 150px;
+      height: auto;
+      margin: 10px;
+    }
+
+    /* Additional style for the page */
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- College and Program Logos Section -->
+<div class="logo-container">
+  <img src="college_logo.png" alt="College Logo"> <!-- Replace with your college logo image -->
+  <img src="programme_logo.png" alt="Program Logo"> <!-- Replace with your program logo image -->
+</div>
+
+<div class="container" id="page1">
+  <h1>Typing Competition</h1>
+  <p>Enter your details to begin the competition.</p>
+  <input type="text" id="name" placeholder="Enter your name" required>
+  <input type="text" id="course" placeholder="Enter your course" required>
+  <button onclick="goToPage2()">Next</button>
+</div>
+
+<div class="container" id="page2" style="display: none;">
+  <h1>Typing Test</h1>
+  <div id="userNameDisplay"></div> <!-- Display user's name here -->
+  <div class="timer" id="timer">Time Left: 30:00</div>
+  <div class="typing-text" id="typingText">
+    "The quick brown fox jumps over the lazy dog, while the curious cat watches from the window, waiting for the right moment to pounce. As the sun sets over the horizon, the bustling city slows down, and the lights flicker on, casting long shadows across the streets. People from all walks of life make their way home, weaving through the crowded sidewalks, as the distant hum of traffic and the occasional honk of a car horn fill the air. In the distance, a train whistle can be heard, signaling its departure from the station, as the night begins to settle in with a calm stillness, offering a brief respite before another busy day."
+  </div>
+  <textarea id="userInput" placeholder="Start typing here..." oninput="checkTyping()" disabled></textarea>
+  <button onclick="submitTyping()">Submit</button>
+  <div id="result"></div>
+</div>
+
+<div class="container" id="congratsPage" style="display: none;">
+  <h1>Congratulations!</h1>
+  <p id="congratsMessage"></p>
+  <div id="finalResult"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
